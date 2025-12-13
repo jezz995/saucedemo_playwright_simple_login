@@ -16,3 +16,11 @@ test("login gagal dengan invalid password", async ({ page }) => {
   await loginPage.login("standard_user", "secret_saos");
   await loginPage.assertLoginFailed();
 });
+
+test("login gagal dengan invalid username", async ({ page }) => {
+  const loginPage = new LoginPage(page);
+
+  await loginPage.goto();
+  await loginPage.login("standard_us", "secret_sauce");
+  await loginPage.assertLoginFailed();
+});
