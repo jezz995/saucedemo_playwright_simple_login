@@ -47,4 +47,13 @@ test.describe("Test Fungsi Shopping Cart", () => {
 
     await expect(page.locator(".cart_item")).toHaveCount(0);
   });
+
+  test("SL-CRT-005-Melanjutkan belanja setelah ada item di dalam cart", async ({
+    page,
+  }) => {
+    await inventoryPage.addItemToCart("Sauce Labs Backpack");
+    await inventoryPage.goToCart();
+    await inventoryPage.continueShopAfter();
+    await expect(page).toHaveURL(/.*inventory.html/);
+  });
 });
