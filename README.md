@@ -17,11 +17,15 @@ It is designed as a **learning and portfolio project** for QA / SDET roles.
 ## 🧪 Test Coverage
 
 - Login functionality
+- E2E Testing
+- Functionality Testing
 - Cross-browser testing
 
 ### ✅ UI Testing
 
 - Login functionality
+- Cart functionality
+- Checkout Functionality
 - Cross-browser testing
 
 ### ✅ API Testing
@@ -43,9 +47,16 @@ It is designed as a **learning and portfolio project** for QA / SDET roles.
 playwright-project/
 ├── src/
 │   ├── pages/
-|   |   |── login.page.ts      # Page Object Model (POM)
+|   |   |── login.page.ts                 # Page Object Model (POM)
+|   |   |── inventory.page.ts             # Page Object Model (POM)
+|   |   |── checkoutinfo.page.ts          # Page Object Model (POM)
+|   |   |── checkoutfinish.page.ts        # Page Object Model (POM)   
 │   ├── tests/
-│   │   ├── login.spec.ts      #Test scenario
+│   │   ├── test-login.spec.ts             #Test scenario
+│   │   ├── test-cart.spec.ts              #Test scenario
+│   │   ├── test-checkoutinfo.spec.ts      #Test scenario
+│   │   ├── test-checkoutfinish.spec.ts    #Test scenario
+│   │   ├── test-E2E.spec.ts               #Test scenario
 ├── playwright.config.ts
 ├── package.json
 └── README.md
@@ -61,11 +72,19 @@ playwright-project/
 npm install
 ```
 
-### 3️⃣ Run UI tests
+### 3️⃣ Run Test by scenario
 
 ```bash
-npx playwright test login.spec.ts
+npx playwright test test-login.spec.ts
+npx playwright test test-cart.spec.ts
+npx playwright test test-checkoutinfo.spec.ts
+npx playwright test test-checkoutfinish.spec.ts
+npx playwright test test-E2E.spec.ts
 ```
+or if you want to run all the test at the same time
+---
+npx playwright test
+---
 
 ## 🌍 Run Tests in Different Browsers
 
